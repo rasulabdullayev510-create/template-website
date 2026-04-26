@@ -43,7 +43,17 @@ function renderNav(activePage) {
 
   // Mobile toggle
   document.getElementById('nav-toggle').addEventListener('click', function() {
-    document.getElementById('nav-links').classList.toggle('open');
+    var isOpen = document.getElementById('nav-links').classList.toggle('open');
+    this.textContent = isOpen ? '✕' : '☰';
+    document.body.classList.toggle('menu-open', isOpen);
+  });
+  // Close menu on nav link click
+  document.getElementById('nav-links').querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      document.getElementById('nav-links').classList.remove('open');
+      document.getElementById('nav-toggle').textContent = '☰';
+      document.body.classList.remove('menu-open');
+    });
   });
 }
 

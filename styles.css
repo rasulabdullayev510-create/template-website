@@ -77,7 +77,9 @@ img { max-width: 100%; display: block; }
   display: none; background: none; border: none;
   color: var(--text2); font-size: 22px; cursor: pointer;
   padding: 10px 12px; min-width: 44px; min-height: 44px;
+  transition: transform 0.2s ease;
 }
+body.menu-open { overflow: hidden; }
 
 /* ── Hero ── */
 .hero {
